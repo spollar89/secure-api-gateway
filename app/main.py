@@ -1,3 +1,4 @@
+import re
 from fastapi import FastAPI, HTTPException, Header
 from pydantic import BaseModel
 from app.models import users_db
@@ -26,6 +27,11 @@ def public_route():
 def login(data: LoginRequest):
     user = users_db.get(data.username)
 
+    if re.match(r"^[a-zA-Z0-9_]+$", data.username) is None:
+        raise HTTPException(status_code=400, detail="Invalid username format")
+    if re.match(r"^[a-zA-Z0-9_]+$", data.password) is None:
+        raise HTTPException(status_code=400, detail="Invalid password format")
+    
     if not user or user["password"] != data.password:
         raise HTTPException(status_code=401, detail="Invalid username or password")
 
