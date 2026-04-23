@@ -77,7 +77,7 @@ def login(data: LoginRequest):
         raise HTTPException(status_code=400, detail="Invalid username format")
     if re.match(r"^[a-zA-Z0-9_]+$", data.password) is None:
         rate_decrease()
-        logger.warning("Invalid password format: %s", data.password)
+        logger.warning("Invalid password format for user: %s", data.username)
         raise HTTPException(status_code=400, detail="Invalid password format")
     
     if not user or user["password"] != data.password:
