@@ -6,41 +6,20 @@ from app.rate_limiter import rate_increase, rate_decrease
 from app.auth import create_access_token, verify_access_token
 import jwt
 import logging
-from logging.config import dictConfig
 
 app = FastAPI(title="Secure API Gateway Project")
-log_config = {
-    "version": 1,
-    "disable_existing_loggers": False,
-    "formatters": {
-        "default": {
-            "format": "%(asctime)s %(name)s %(levelname)s: %(message)s",
-            "datefmt": "%Y-%m-%d %H:%M:%S",
-        },
-    },
-    "handlers": {
-        "default": {
-            "formatter": "default",
-            "class": "logging.StreamHandler",
-            "stream": "ext://sys.stdout",
-        },
-        "file_handler": {
-            "class": "logging.FileHandler",
-            "level": "DEBUG",
-            "formatter": "default",
-            "filename": "logs/app.log",
-            "encoding": "utf-8",
-            "mode": "a"
-        },
-    },
-    "loggers": {
-        "app": {"handlers": ["default", "file_handler"], "level": "DEBUG", "propagate": False},
-    },
-}
 
-dictConfig(log_config)
+# Configure file handler for app logs
+file_handler = logging.FileHandler("logs/app.log", mode="a")
+file_handler.setFormatter(logging.Formatter("%(asctime)s %(name)s %(levelname)s: %(message)s", "%Y-%m-%d %H:%M:%S"))
 
 logger = logging.getLogger("app")
+logger.setLevel(logging.DEBUG)
+logger.addHandler(file_handler)
+
+# Add file handler for uvicorn access logs (422 errors)
+uvicorn_access_logger = logging.getLogger("uvicorn.access")
+uvicorn_access_logger.addHandler(file_handler)
 
 class LoginRequest(BaseModel):
     username: str

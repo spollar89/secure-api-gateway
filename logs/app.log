@@ -83,3 +83,54 @@
 2026-04-23 11:44:06 app INFO: Public endpoint accessed
 2026-04-23 11:44:47 app INFO: Login requested for user: user1
 2026-04-23 11:44:47 app WARNING: Invalid password format: user123!
+2026-04-23 11:47:09 app INFO: Login requested for user: user1
+2026-04-23 11:47:09 app WARNING: Invalid password format for user: user1
+2026-04-23 11:48:31 app INFO: Login requested for user: user1 this is code;
+2026-04-23 11:48:31 app WARNING: Invalid username format: user1 this is code;
+2026-04-23 11:48:37 app INFO: Login requested for user: user1
+2026-04-23 11:48:37 app INFO: User user1 logged in successfully
+2026-04-23 11:49:18 app WARNING: Access forbidden for user: user1 with role: user
+2026-04-23 11:49:37 app INFO: Login requested for user: admin1
+2026-04-23 11:49:37 app INFO: User admin1 logged in successfully
+2026-04-23 11:49:55 app INFO: Access granted for user: admin1 with role: admin
+2026-04-23 11:53:12 uvicorn.error INFO: Started server process [15412]
+2026-04-23 11:53:12 uvicorn.error INFO: Waiting for application startup.
+2026-04-23 11:53:12 uvicorn.error INFO: Application startup complete.
+2026-04-23 11:53:27 uvicorn.access INFO: 127.0.0.1:63629 - "POST /login HTTP/1.1" 422
+2026-04-23 11:55:30 uvicorn.error INFO: Shutting down
+2026-04-23 11:55:30 uvicorn.error INFO: Waiting for application shutdown.
+2026-04-23 11:55:30 uvicorn.error INFO: Application shutdown complete.
+2026-04-23 11:55:31 uvicorn.error INFO: Finished server process [15412]
+2026-04-23 11:55:52 uvicorn.error INFO: Started server process [15212]
+2026-04-23 11:55:52 uvicorn.error INFO: Waiting for application startup.
+2026-04-23 11:55:52 uvicorn.error INFO: Application startup complete.
+2026-04-23 11:55:52 uvicorn.error INFO: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2026-04-23 11:55:58 uvicorn.access INFO: 127.0.0.1:64654 - "POST /login HTTP/1.1" 422
+2026-04-23 11:58:00 uvicorn.access INFO: 127.0.0.1:55198 - "POST /login HTTP/1.1" 422
+2026-04-23 11:58:07 uvicorn.error INFO: Shutting down
+2026-04-23 11:58:07 uvicorn.error INFO: Waiting for application shutdown.
+2026-04-23 11:58:07 uvicorn.error INFO: Application shutdown complete.
+2026-04-23 11:58:07 uvicorn.error INFO: Finished server process [15212]
+2026-04-23 11:58:11 uvicorn.error INFO: Started server process [6240]
+2026-04-23 11:58:11 uvicorn.error INFO: Waiting for application startup.
+2026-04-23 11:58:11 uvicorn.error INFO: Application startup complete.
+2026-04-23 11:58:16 uvicorn.access INFO: 127.0.0.1:55269 - "POST /login HTTP/1.1" 422
+2026-04-23 11:58:36 uvicorn.error INFO: Shutting down
+2026-04-23 11:58:36 uvicorn.error INFO: Waiting for application shutdown.
+2026-04-23 11:58:36 uvicorn.error INFO: Application shutdown complete.
+2026-04-23 11:58:36 uvicorn.error INFO: Finished server process [6240]
+2026-04-23 11:58:37 uvicorn.error INFO: Started server process [15732]
+2026-04-23 11:58:37 uvicorn.error INFO: Waiting for application startup.
+2026-04-23 11:58:37 uvicorn.error INFO: Application startup complete.
+2026-04-23 11:59:07 uvicorn.error INFO: Shutting down
+2026-04-23 11:59:07 uvicorn.error INFO: Waiting for application shutdown.
+2026-04-23 11:59:07 uvicorn.error INFO: Application shutdown complete.
+2026-04-23 11:59:07 uvicorn.error INFO: Finished server process [15732]
+2026-04-23 11:59:20 uvicorn.access INFO: 127.0.0.1:60971 - "POST /login HTTP/1.1" 422
+2026-04-23 11:59:29 uvicorn.access INFO: 127.0.0.1:55486 - "POST /login HTTP/1.1" 422
+2026-04-23 11:59:36 app INFO: Login requested for user: admin1
+2026-04-23 11:59:36 app INFO: User admin1 logged in successfully
+2026-04-23 11:59:36 uvicorn.access INFO: 127.0.0.1:58811 - "POST /login HTTP/1.1" 200
+2026-04-23 12:00:04 app INFO: Login requested for user: admin1
+2026-04-23 12:00:04 app INFO: User admin1 logged in successfully
+2026-04-23 12:00:57 uvicorn.access INFO: 127.0.0.1:63720 - "POST /login HTTP/1.1" 422
