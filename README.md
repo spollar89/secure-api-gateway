@@ -65,7 +65,7 @@ Running the Project:
 
 >Install dependencies: pip install -r requirements.txt
 
->Start the server: uvicorn app.main:app –reload
+>Start the server: uvicorn app.main:app -–reload
 
 >Open the API documentation: http://127.0.0.1:8000/docs
 
